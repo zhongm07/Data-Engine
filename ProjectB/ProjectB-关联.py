@@ -6,6 +6,7 @@ from efficient_apriori import apriori as ap
 # 数据读取及分析数据提取
 file = open('./订单表.csv')
 data = pd.read_csv(file)
+# 相比产品名称 产品型号名称会更细，更有业务价值
 dataset = data[['客户ID', '产品型号名称']]
 dataset = dataset.drop(dataset[dataset.产品型号名称 == 'none'].index)
 dataset = dataset.sort_values(by='客户ID', ascending=True)
